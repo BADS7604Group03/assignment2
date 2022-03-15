@@ -20,8 +20,10 @@ Objective: What does it take to train an image classifier or an object detector 
 
 
 ![image](https://user-images.githubusercontent.com/87576892/158398009-6833deb5-af66-4bd0-b812-785b8b6981fa.png)
-(ภาพ accuracy และ loss ในระหว่างที่ train)
+
+ (ภาพ accuracy และ loss ในระหว่างที่ train)
 
 ![image](https://user-images.githubusercontent.com/87576892/158398116-0e2f2293-8dd1-402e-8ba0-87f8c8a35f15.png)
-(ภาพการทำ Grad-CAM เพื่อตรวจสอบโมเดล)
+
+ (ภาพการทำ Grad-CAM เพื่อตรวจสอบโมเดล)
 
