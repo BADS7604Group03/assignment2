@@ -31,6 +31,9 @@ Grid size reduction จะถูกทำโดย max pooling และ average
 <p align="center">
 <img width="800" src="https://user-images.githubusercontent.com/87868128/158611336-543fbd52-5255-4ffe-844c-d773232050ea.png">
 </br>จากภาพเป็นผลจาก Multi-crop reported จะเห็นว่า Inception V3 มี error rate ที่น้อยมากเมื่อเทียบกับ Model ที่มีมาก่อนหน้า
+จากภาพจะเห็นว่า InceptionV3 มีโครงสร้างเป็น 5 ส่วนหลักคือ Inception Module A ,Grid Size of Reduction step 1,Inception Module B ,Grid Size of Reduction Step2  Inception Module C ซึ่งความสามารถแยก output ได้ 1,000 classes
+
+
 </p>
 </br>Reference:
 </br>https://iq.opengenus.org/inception-v3-model-architecture/
@@ -100,7 +103,7 @@ Grid size reduction จะถูกทำโดย max pooling และ average
                                                              
                                                              
                                                              
-                    ![image](https://user-images.githubusercontent.com/83268624/158617619-c5269788-2d4a-4a7f-b15d-5a56d8e71998.png)
+
 
 ![image](https://user-images.githubusercontent.com/83268624/158618409-bf8b2ade-93fd-4927-8a79-098b3c4c51b7.png)
 
