@@ -70,7 +70,19 @@ Grid size reduction จะถูกทำโดย max pooling และ average
 
 ### Freeze All Layers
 
-### Unfreeze
+### Unfreeze Layer: 171-174
+จากการทำการทดลองการทำ Image Classifications เพื่อที่จะแยกรูปทั้งหมด 600 รูป (แบ่งออกเป็น รูปอาหาร 200 รูป, รูปเมนู 200 รูป และรูปบรรยากาศร้านอาหาร 200 รูป) ว่ารูปในกลุ่ม test set ที่นำมาทดสอบกับ model มีความแม่นยำมากน้อยเพียงใด โดยในส่วนของการทดลองนี้นั้น ทางเราจะใช้ ResNet50 พร้อม weight ที่ได้จากการ train ด้วย ImageNet มาใช้เฉพาะส่วน Feature Extractor โดยจะได้จำนวน layers ทั้งหมด 175 layers (0-174) และจำนวน Parameters ทั้งหมด 23,587,712 parameters โดยในการทดลองนี้นั้นเราจะทำการทดลองเพิ่มเติมจากเดิม (ResNet50: Freeze all layers) ตรงที่จะทำการ unfreeze weight ใน layer ตั้งแต่ 171 – 174 เพื่อให้ model ทำการ tuning weight ใหม่ให้เหมาะสมกับข้อมูลในระหว่างที่ทำการ train ได้ ซึ่งเมื่อนำมารวมกับส่วน classification layer ที่ทางเราได้ทำการกำหนดสร้างขึ้นมาใหม่เองนั้น จะทำให้มีจำนวน layers เพิ่มขึ้นเป็นทั้งหมด 181 layers และมีจำนวน parameters ทั้งหมด 49,541,763 parameters (เพิ่มขึ้น 110%) โดย tools ที่ทางทีมได้ทำการเลือกมาใช้ในการทดลองครั้งนี้นั้น คือ Google Colab (GPU: Tesla K80) ซึ่งผลลัพธ์ที่ได้จากการ train ที่ดีที่สุดมี loss อยู่ที่, accuracy อยู่ที่ 0.95 (atmosphere : 0.90, food : 0.95, menu : 0.97) และมี roc อยู่ที่ 0.99 (atmosphere : 0.99, food : 0.99, menu : 0.99)
+
+
+<p align="center">
+  <img width="800" src="https://user-images.githubusercontent.com/71161635/158633378-aa6a7b1c-fea3-4b76-8561-8d70a7f8d0b0.png">
+ 
+  <img width="800" src="https://user-images.githubusercontent.com/71161635/158633403-9cfb142b-502d-4e00-87eb-9f82c2679a9b.png">
+  </br>(ภาพ accuracy และ loss ในระหว่างที่ train)
+
+  <img width="800" src="https://user-images.githubusercontent.com/71161635/158633696-127c8e6c-76a0-4f77-9854-ee7290ac551d.png">
+  </br>(ภาพการทำ Grad-CAM เพื่อตรวจสอบโมเดล)
+</p>
 
 
 ## Inception V3
