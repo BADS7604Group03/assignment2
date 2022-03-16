@@ -77,7 +77,7 @@ Grid size reduction จะถูกทำโดย max pooling และ average
 
 ### Freeze All Layers
 ทางกลุ่มได้นำ InceptionV3 พร้อมน้ำหนักที่ได้จากการ train กับข้อมูล ImageNet มาเป็นส่วน Feature Extractor ซึ่งโมเดลจะมีจำนวน Layer ทั้งหมด 310 Layers และจำนวน Parameter ทั้งหมด 21,802,784 ตัว ทั้งนี้เราจะทำการ freezeทุกlayer เพื่อเป็น Base line ในกรณีที่ต้องการเปรียบเทียบประสิทธิภาพ unfreeze บางLayer ด้วยความคาดหวังว่า model ที่ unfreeze บาง layer จะให้ผลสรุปที่ดียิ่งขึ้น เมื่อนำ Feature Extractor มารวมกับ ส่วน Classification Layer จะมีจำนวน Layer ทั้งหมด 317  layer และจำนวน Parameter ทั้งหมด 55,621,155
-การทดลองนี้ได้ train โมเดลผ่าน Google-Colab (gpu : Tesla-K80) โดยผลจากการ train ได้ผลลัพธ์ดีที่สุดมี loss อยู่ที่ 0.1798, accuracy อยู่ที่ 0.958 ( atmosphere : 0.925, food : 1.0, menu : 0.95) และมี roc อยู่ที่ 0.999 (atmosphere : 0.996, food : 1.0, menu : 1.0)
+การทดลองนี้ได้ train โมเดลผ่าน Google-Colab (gpu : Tesla-K80) โดยผลจากการ train ได้ผลลัพธ์ดีที่สุดมี loss อยู่ที่ 0.1798, accuracy อยู่ที่ 0.958 ( atmosphere : 0.925, food : 1.0, menu : 0.95) และมี roc อยู่ที่ 0.99 (atmosphere : 0.99, food : 1.0, menu : 1.0)
 
  
 ![image](https://user-images.githubusercontent.com/83268624/158615943-24e3f7bc-bca5-4bd5-845d-7582711b7611.png)
