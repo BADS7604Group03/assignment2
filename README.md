@@ -100,11 +100,11 @@ Grid size reduction จะถูกทำโดย max pooling และ average
                                                              
                                                              
                                                              
-                    ![image](https://user-images.githubusercontent.com/83268624/158616877-4df03154-0b1f-40b2-a713-95a43cc78676.png)
+                    ![image](https://user-images.githubusercontent.com/83268624/158617619-c5269788-2d4a-4a7f-b15d-5a56d8e71998.png)
+
 
 
  
-
                                                        ภาพตัวอย่าง Grad-Cam ของบรรยากาศในร้าน
 
 
