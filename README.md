@@ -102,6 +102,7 @@ Grid size reduction จะถูกทำโดย max pooling และ average
                                                              
                     ![image](https://user-images.githubusercontent.com/83268624/158617619-c5269788-2d4a-4a7f-b15d-5a56d8e71998.png)
 
+![image](https://user-images.githubusercontent.com/83268624/158618409-bf8b2ade-93fd-4927-8a79-098b3c4c51b7.png)
 
 
  
