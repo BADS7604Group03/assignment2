@@ -11,6 +11,35 @@
 
 ในงานทำงานของกลุ่มเรา เราจะนำ transfer learning โดยการนำ Weight ของ Pretrain CNN Models เช่น   ResNet50 ซึ่งมาจากการพัฒนามาจากทีม Microsoft  ,Inception V3ซึ่งมาจากการพัฒนามาจากทีม GoogLeNet   และ NASNetMobile ที่พัฒนามาจาก Google brain team เพื่อมาเปรียบเทียบประสิทธิภาพความแม่นยำในการทำจำแนก บรรยากาศในร้านอาหาร  เมนูอาหาร และ อาหาร อ้างอิงมาจาก  https://life.wongnai.com/internship-image-classification-wongnai-a1dbc2890766  
 
+# Network Architecture
+
+## Inception V3
+<p align="center">
+<img width="800" src="https://user-images.githubusercontent.com/87868128/158610993-a3ff03aa-f0bc-4a2d-bc5f-025fd487a3f3.png">
+</p>
+Inception V3 เป็นโมเดลที่ได้รับการพัฒนาโดย Google ซึ่งได้รับรางวัลรองชนะเลิศสำหรับ Image Classification ใน ILSVR 2015 (78.1% accuracy ใน ImageNet dataset) มีโครงสร้าง Deep learning network ทั้งหมด 42 Layers มีจำนวน Parameter ทั้งหมด 21 ล้าน Parameter การพัฒนา Inception V3 มีจุดมุ่งหมายเพื่อให้ใช้ทรัพยากรในการคำนวณน้อยลง แต่ที่ได้ประสิทธิภาพที่สูงขึ้นโดยปรับปรุงจาก Inception architectures รุ่นก่อนหน้า ซึ่งแนวคิดในการออกแบบ Inception V3 สามารถแบ่งออกได้เป็น 4 ส่วนหลัก คือ
+</br>1.	Factorization into Smaller Convolutions
+เป็นการทำเพื่อช่วยลดการคำนวณเนื่องจากจะทำให้จำนวน Parameter น้อยลง ด้วยการแทนที่ convolutions อันใหญ่ด้วย convolutions อันที่เล็กกว่า เช่น แทนที่ 5 x 5 filter ด้วย 3 x 3 filter สองอันจะช่วยลดจำนวน Parameter ลงไปได้ 28%
+</br>2.	Spatial Factorization into Asymmetric Convolutions
+ทำ Asymmetric convolutions ต่อด้วยn x 1 filter เช่น แทนที่ 3 x 3 filter ด้วย 1 x 3 filter และ 3 x 1 filter ตามลำดับ จะทำให้ช่วยลดจำนวน Parameter ลงไปอีก 33%
+</br>3.	Utility of Auxiliary classifiers
+การใช้ Auxiliary classifiers เพื่อปรับปรุงการ convergence ใน deep neural network และส่วนใหญ่จะใช้เพื่อแก้ปัญหา Vanishing gradient ที่พบใน deep neural network ซึ่งใน inception V3 Auxiliary classifiers จะถูกใช้เป็น Regularizer
+</br>4.	Efficient Grid Size Reduction
+Grid size reduction จะถูกทำโดย max pooling และ average pooling และเพื่อแก้ปัญหาคอขวดในการคำนวณ Inception V3 เพิ่มวิธีการ ที่ทำให้ประสิทธิภาพในการทำ Grid size reduction เพิ่มมากขึ้น
+
+</br>ประสิทธิภาพของ Inception V3
+<p align="center">
+<img width="800" src="https://user-images.githubusercontent.com/87868128/158611336-543fbd52-5255-4ffe-844c-d773232050ea.png">
+</br>จากภาพเป็นผลจาก Multi-crop reported จะเห็นว่า Inception V3 มี error rate ที่น้อยมากเมื่อเทียบกับ Model ที่มีมาก่อนหน้า
+</p>
+</br>Reference:
+</br>https://iq.opengenus.org/inception-v3-model-architecture/
+</br>https://blog.paperspace.com/popular-deep-learning-architectures-resnet-inceptionv3-squeezenet/
+</br>https://arxiv.org/abs/1512.00567
+</br>https://sh-tsang.medium.com/review-inception-v3-1st-runner-up-image-classification-in-ilsvrc-2015-17915421f77c
+</br>https://cloud.google.com/tpu/docs/inception-v3-advanced
+
+
 # Data
 
 # Training Strategy
