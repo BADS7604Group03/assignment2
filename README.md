@@ -17,7 +17,9 @@
 <p align="center">
 <img width="800" src="https://user-images.githubusercontent.com/87868128/158610993-a3ff03aa-f0bc-4a2d-bc5f-025fd487a3f3.png">
 </p>
-Inception V3 เป็นโมเดลที่ได้รับการพัฒนาโดย Google ซึ่งได้รับรางวัลรองชนะเลิศสำหรับ Image Classification ใน ILSVR 2015 (78.1% accuracy ใน ImageNet dataset) มีโครงสร้าง Deep learning network ทั้งหมด 42 Layers มีจำนวน Parameter ทั้งหมด 21 ล้าน Parameter การพัฒนา Inception V3 มีจุดมุ่งหมายเพื่อให้ใช้ทรัพยากรในการคำนวณน้อยลง แต่ที่ได้ประสิทธิภาพที่สูงขึ้นโดยปรับปรุงจาก Inception architectures รุ่นก่อนหน้า ซึ่งแนวคิดในการออกแบบ Inception V3 สามารถแบ่งออกได้เป็น 4 ส่วนหลัก คือ
+</p>
+         จากภาพจะเห็นว่า InceptionV3 มีโครงสร้างเป็น 5 ส่วนหลักคือ Inception Module A ,Grid Size of Reduction step 1,Inception Module B ,Grid Size of Reduction Step2  Inception Module C ซึ่งความสามารถแยก output ได้ 1,000 classes
+       Inception V3 เป็นโมเดลที่ได้รับการพัฒนาโดย Google ซึ่งได้รับรางวัลรองชนะเลิศสำหรับ Image Classification ใน ILSVR 2015 (78.1% accuracy ใน ImageNet dataset) มีโครงสร้าง Deep learning network ทั้งหมด 42 Layers มีจำนวน Parameter ทั้งหมด 21 ล้าน Parameter การพัฒนา Inception V3 มีจุดมุ่งหมายเพื่อให้ใช้ทรัพยากรในการคำนวณน้อยลง แต่ที่ได้ประสิทธิภาพที่สูงขึ้นโดยปรับปรุงจาก Inception architectures รุ่นก่อนหน้า ซึ่งแนวคิดในการออกแบบ Inception V3 สามารถแบ่งออกได้เป็น 4 ส่วนหลัก คือ
 </br>1.	Factorization into Smaller Convolutions
 เป็นการทำเพื่อช่วยลดการคำนวณเนื่องจากจะทำให้จำนวน Parameter น้อยลง ด้วยการแทนที่ convolutions อันใหญ่ด้วย convolutions อันที่เล็กกว่า เช่น แทนที่ 5 x 5 filter ด้วย 3 x 3 filter สองอันจะช่วยลดจำนวน Parameter ลงไปได้ 28%
 </br>2.	Spatial Factorization into Asymmetric Convolutions
@@ -31,7 +33,7 @@ Grid size reduction จะถูกทำโดย max pooling และ average
 <p align="center">
 <img width="800" src="https://user-images.githubusercontent.com/87868128/158611336-543fbd52-5255-4ffe-844c-d773232050ea.png">
 </br>จากภาพเป็นผลจาก Multi-crop reported จะเห็นว่า Inception V3 มี error rate ที่น้อยมากเมื่อเทียบกับ Model ที่มีมาก่อนหน้า
-จากภาพจะเห็นว่า InceptionV3 มีโครงสร้างเป็น 5 ส่วนหลักคือ Inception Module A ,Grid Size of Reduction step 1,Inception Module B ,Grid Size of Reduction Step2  Inception Module C ซึ่งความสามารถแยก output ได้ 1,000 classes
+
 
 
 </p>
