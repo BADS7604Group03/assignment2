@@ -145,10 +145,16 @@ Grid size reduction จะถูกทำโดย max pooling และ average
 
 # Member 
 1) ณัฐภณ อัศวเหม 6310422052 (% contribution in this homework: 16.67%)
-3) ดวงธิดา แซ่แต้ 6310422056 (% contribution in this homework: 16.67%)
-4) เมธี ประเสริฐกิจพันธุ์ 6310422053 (% contribution in this homework: 16.67%)
-5) พีรพัทธ ตั้งไพบูลย 6310422024 (% contribution in this homework: 16.67%)
-6) วิชิต ชำนาญนาวา 6310422055 (% contribution in this homework: 16.67%)
-7) ไตรทิพย์ ศุภศิริวัฒนา 6310422009 (% contribution in this homework: 16.67%)
+<br>Train freeze Resnet50 model, Resnet50 Architecture
+2) ดวงธิดา แซ่แต้ 6310422056 (% contribution in this homework: 16.67%)
+<br>Train freeze NASNetMobile model, Data
+3) เมธี ประเสริฐกิจพันธุ์ 6310422053 (% contribution in this homework: 16.67%)
+<br>Train unfreeze Resnet50 model, Training strategy
+4) พีรพัทธ ตั้งไพบูลย 6310422024 (% contribution in this homework: 16.67%)
+<br>Train unfreeze Inception V3 model, Inception V3 Architecture
+5) วิชิต ชำนาญนาวา 6310422055 (% contribution in this homework: 16.67%)
+<br>Train freeze Inception V3 model, Introduction
+6) ไตรทิพย์ ศุภศิริวัฒนา 6310422009 (% contribution in this homework: 16.67%)
+<br>Train unfreeze NASNetMobile model, Result and Conclusion, NASNetMobile Architecture
 
 
