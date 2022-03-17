@@ -35,7 +35,7 @@
 Summary by Network Architecture
 - [x] [NASNetMobile ](#NASNetMobile )
 - [x] [ResNet50](#ResNet50)
-- [x] [Inception V3](#Inception V3)
+- [x] [Inception V3](#InceptionV3)
 
 
 # Network Architecture
@@ -106,7 +106,7 @@ Architecture of ResNet50 (รูปประกอบด้านบน)
 </p>
 
 
-## Inception V3
+## InceptionV3
 <p align="center">
 <img width="800" src="https://user-images.githubusercontent.com/87868128/158610993-a3ff03aa-f0bc-4a2d-bc5f-025fd487a3f3.png">
 </p>
