@@ -23,6 +23,18 @@
 3) class_seq : เก็บข้อมูล dummy ของตัวเลขแต่ละ class 0-atmosphere, 1-food, 2-menu
 
 # Training Strategy
+ในส่วนของการทำ Training Strategy นั้น ทางทีมจะทำการแบ่งออกเป็นทั้งหมด 6 scenarios โดยจะแบ่งรูปแบบของการเปรียบเทียบ result ออกเป็น 2 มุมมอง ดังนี้
+
+1)เปรียบเทียบความแม่นยำ, loss และ roc ในมุมของ model เพื่อที่จะทำการทดสอบดูว่า ถ้าเราทำการ fix ค่าต่างๆ คงที่ เช่น trainable layers, augmentation, optimizer, learning rate, loss function, batch size และ epoch (ดังตัวอย่าง table ด้านล่าง (Comparation 1)) แล้วทำการดูว่า result ที่ได้นั้นจะมีความแม่นยำแตกต่างกันมากเพียงไหน
+
+2)เปรียบเทียบความแม่นยำ, loss และ roc ในมุมของการทำ unfreeze layer ของแต่ละ model จะมี effect กับค่าความยำในการทำนายของแต่ละ class มากน้อยแค่ไหน (ดังตัวอย่างรูปตารางด้านล่าง (Comparation 2)) ถ้าเกิดค่า parameters ต่างๆถูก fix ค่าเหมือนกัน (เช่นเดียวกับ Comparation 1)
+
+
+<p align="center">
+  <img width="800" src="https://user-images.githubusercontent.com/71161635/158964895-a333edf7-ea63-41da-8009-bf824821e964.png">
+</p>
+
+โดยทั้ง 6 scenarios ตัว dataset จะมีทั้งหมด 3 classes (class ละ 200 รุป) และทำการแบ่งจำนวน Training data กับ Test data เป็น 80:20 (ตามตัวแปร TEST_SIZE) เป็นต้น
 
 # Result
 จากการพัฒนาโมเดลด้วยวิธีการ Transfer Learning ที่นำ Network 3 รูปแบบได้แก่ NASNetMobile, ResNet50 และ InceptionV3 มาเป็นส่่วน Feature Extractor ของตัวโมเดลจำแนกประเภทรูปภาพทั้ง 3 คลาส 1 - บรรยากาศ(atmosphere), 2-อาหาร(food) และ 3-เมนู(menu) ซึ่งโมเดลที่ได้ผลลัพธ์ดีที่สุดคือ InceptionV3 แบบ unfreeze (layer : 171-174) ที่ได้ Accuracy ภาพรวมอยู่ที่ 0.967 ที่มีจำนวนพารามิตเตอร์อยู่ที่ 21.8 ล้านตัว โดยคลาสที่โมเดลสามารถทำนายได้แย่ที่สุดคือ บรรยากาศ(atmosphere) (acc-0.9) ในขณะที่โมเดลที่ได้ผลลัพธ์ดีรองลงมาก็ยังเป็น InceptionV3 ที่ freeze ทุก layer ในขณะที่ train ได้ Accuracy ภาพรวมอยู่ที่ 0.958 ซึ่งมีค่าต่างกันเล็กน้อย 
